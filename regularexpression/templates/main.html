@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>
+            Regular Expression
+        </title>
+       
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+        
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='nbar.css') }}">
+
+    </head>
+    
+<body>
+    <nav id="topnav">
+        
+        <a id="logo" class="nav-link" href="#">REGEX</a>
+        
+        <a id="login" class="nav-link" href="">Login</a>
+        <a id="signin" class="nav-link" href="">Sign up</a>
+      
+
+        <a id="about" class="nav-link" href="#">About Me</a>
+     </nav>
+ 
+    <br>
+    <br>
+    <br>
+    <form action="/" method="post" enctype="multipart/form-data">    
+        <p>Welcome to<span class="fancy">REGEX</span></p>
+   <center> <label><h1><i>choose a file to extract:</i></h1></label>
+    <input type="file" name="pdf_file">
+    <input type="submit" value="Submit">
+    <div class="cont">  
+       <!-- <button class="btn" value="Uploadpdf"><span>Submit</span> <img src="{{url_for('static', filename='regex.png')}}"  height="60" width="60"></button>
+-->
+        </div></form>
+          {% if result %}
+        <textarea id="result" name="story" rows="15" cols="100" readonly >
+          
+            
+              {% for word in result %}
+                {{ word }}
+              {% endfor %}
+
+</textarea>
+
+           
+          {% endif %}
+    
+    
+    
+</body>
+</html>
